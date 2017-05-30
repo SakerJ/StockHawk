@@ -1,6 +1,7 @@
 package com.udacity.stockhawk.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -43,10 +44,15 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @BindView(R.id.error)
     TextView error;
     private StockAdapter adapter;
+    private Cursor mCursor;
+    public static final String DETAIL_DATA = "detailData";
 
     @Override
     public void onClick(String symbol) {
         Timber.d("Symbol clicked: %s", symbol);
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra(DETAIL_DATA, symbol);
+        startActivity(intent);
     }
 
     @Override
@@ -147,6 +153,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             error.setVisibility(View.GONE);
         }
         adapter.setCursor(data);
+        mCursor = data;
     }
 
 
