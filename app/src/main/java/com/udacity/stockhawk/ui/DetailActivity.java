@@ -25,7 +25,7 @@ import yahoofinance.Stock;
 import yahoofinance.YahooFinance;
 import yahoofinance.histquotes.HistoricalQuote;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
 
     @BindView(R.id.lc_detail)
     LineChart mChart;
@@ -40,14 +40,8 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
         mSymbol = getIntent().getStringExtra(MainActivity.DETAIL_DATA);
-        if (mSymbol != null) {
-            new StockTask().execute(mSymbol);
-        } else {
-            Toast.makeText(this, R.string.stock_null, Toast.LENGTH_SHORT).show();
-            finish();
-        }
-        // 表格默认显示
-        mChart.setNoDataText(getString(R.string.no_detail_data));
+        mRefreshLayout.setOnRefreshListener(this);
+        onRefresh();
     }
 
     private void drawChart() {
@@ -138,6 +132,16 @@ public class DetailActivity extends AppCompatActivity {
 
             // set data
             mChart.setData(data);
+        }
+    }
+
+    @Override
+    public void onRefresh() {
+        if (mSymbol != null) {
+            new StockTask().execute(mSymbol);
+        } else {
+            Toast.makeText(this, R.string.stock_null, Toast.LENGTH_SHORT).show();
+            finish();
         }
     }
 
