@@ -13,6 +13,7 @@
         android:layout_marginEnd="4dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/input_stock"
         android:hint="@string/dialog_hint"
         android:inputType="textCapCharacters"
         android:textDirection="locale"/>

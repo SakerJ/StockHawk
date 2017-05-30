@@ -35,5 +35,8 @@
     <string name="add_stock">Add stock</string>
     <string name="stock_null">Stock is null</string>
     <string name="no_detail_data">No detail data</string>
+    <string name="refresh">refresh</string>
+    <string name="line_chart">line chart</string>
+    <string name="input_stock">input stock</string>
 
 </resources>
