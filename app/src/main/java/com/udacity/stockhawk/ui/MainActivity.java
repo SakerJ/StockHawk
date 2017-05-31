@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @BindView(R.id.error)
     TextView error;
     private StockAdapter adapter;
-    private Cursor mCursor;
     public static final String DETAIL_DATA = "detailData";
 
     @Override
@@ -153,7 +152,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             error.setVisibility(View.GONE);
         }
         adapter.setCursor(data);
-        mCursor = data;
     }
 
 
