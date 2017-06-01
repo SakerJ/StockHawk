@@ -38,5 +38,8 @@
     <string name="refresh">refresh</string>
     <string name="line_chart">line chart</string>
     <string name="input_stock">input stock</string>
+    <string name="appwidget_text">StockHawk</string>
+    <string name="add_widget">Add widget</string>
+    <string name="no_data_available">No stock data available</string>
 
 </resources>
