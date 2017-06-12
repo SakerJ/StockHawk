@@ -21,4 +21,5 @@
     <string name="stock_null">股票为空</string>
     <string name="toast_no_connectivity">将在网络可用时刷新</string>
     <string name="toast_stock_added_no_connectivity">代号 %s 已添加。将在网络可用时刷新</string>
+    <string name="action_change_units">显示模式</string>
 </resources>

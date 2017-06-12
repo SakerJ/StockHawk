@@ -18,7 +18,7 @@
     <string name="default_stocks_facebook" translatable="false">FB</string>
 
 
-    <string name="action_change_units" translatable="false">@string/pref_display_mode_key</string>
+    <string name="action_change_units">displayMode</string>
 
 
     <string name="dialog_title">Add Stock</string>
