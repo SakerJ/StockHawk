@@ -77,10 +77,13 @@ public final class QuoteSyncJob {
 
 
                 Stock stock = quotes.get(symbol);
+                if (stock == null) {
+                    continue;
+                }
                 StockQuote quote = stock.getQuote();
 
                 // 股票价格不存在，则不读取数据
-                if(quote.getPrice() == null){
+                if (quote.getPrice() == null) {
                     // 在Service中Toast的方法
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {

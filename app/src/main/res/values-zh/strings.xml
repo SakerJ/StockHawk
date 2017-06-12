@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">股票雄鹰</string>
+    <string name="add_stock">添加股票</string>
+    <string name="add_widget">添加小部件</string>
+    <string name="appwidget_text">股票雄鹰</string>
+    <string name="dialog_add">添加</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="dialog_hint">代号(如：GOOG)</string>
+    <string name="dialog_title">添加股票</string>
+    <string name="error_no_network">无网络连接！将在网络可用时加载股票数据</string>
+    <string name="error_no_stocks">没有添加股票！点击悬浮按钮添加股票</string>
+    <string name="input_regex">请输入正确的代号</string>
+    <string name="input_stock">输入股票</string>
+    <string name="line_chart">线性图表</string>
+    <string name="no_data_available">无可用的股票数据</string>
+    <string name="no_detail_data">无详细信息</string>
+    <string name="refresh">刷新</string>
+    <string name="stock_already_exist">该股票已存在</string>
+    <string name="stock_not_exist">该股票不存在</string>
+    <string name="stock_null">股票为空</string>
+    <string name="toast_no_connectivity">将在网络可用时刷新</string>
+    <string name="toast_stock_added_no_connectivity">代号 %s 已添加。将在网络可用时刷新</string>
+</resources>

@@ -25,6 +25,9 @@ import com.udacity.stockhawk.data.Contract;
 import com.udacity.stockhawk.data.PrefUtils;
 import com.udacity.stockhawk.sync.QuoteSyncJob;
 
+import java.util.Set;
+import java.util.regex.Pattern;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import timber.log.Timber;
@@ -123,6 +126,18 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     void addStock(String symbol) {
         if (symbol != null && !symbol.isEmpty()) {
+            // 英文字母的正则
+            Pattern pattern = Pattern.compile("^[A-Za-z]+");
+            if (!pattern.matcher(symbol).matches()) {
+                Toast.makeText(this, R.string.input_regex, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            // 是否已存在
+            Set<String> stocks = PrefUtils.getStocks(this);
+            if (stocks.contains(symbol)) {
+                Toast.makeText(this, R.string.stock_already_exist, Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             if (networkUp()) {
                 swipeRefreshLayout.setRefreshing(true);
